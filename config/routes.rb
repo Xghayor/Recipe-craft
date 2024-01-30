@@ -1,10 +1,11 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'users#index'
 
-  resources :users
-  resources :recipes
-  resources :foods
+  resources :users do
+  end
+
+  # Defines the root path route ("/") to the public_recipes controller's index action
+  root "users#index"
+
+  get '/public_recipes', to: 'public_recipes#index'
 end
