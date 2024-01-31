@@ -1,0 +1,14 @@
+<h2>Food List Page</h2>
+<% if current_user == @user %>
+<div class="add-food">
+  <%= link_to "Add Food", new_food_path(current_user) %>
+</div>
+<% end %>
+<% @foods.each_with_index do |food, index| %>
+  <p><%= food.name %></p>
+  <p>$<%= food.price %></p>
+  <p><%= food.measurement_unit %></p>
+  <% if can? :destroy, food %>
+    <%= button_to 'Delete', destroy_food_path(food), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
