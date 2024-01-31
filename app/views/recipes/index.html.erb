@@ -1,7 +1,5 @@
 <h2>Recipe List Page</h2>
 
-<%= link_to 'New Recipe', new_recipe_path %>
-
 <% @recipes.each_with_index do |recipe, index| %>
   <p><%= link_to recipe.name, recipe_path(recipe) %></p>
   <p>By: <%= recipe.user.name %></p>

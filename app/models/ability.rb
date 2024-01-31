@@ -9,10 +9,6 @@ class Ability
       can :read, Recipe
       can :create, Recipe
       can :destroy, Recipe, user_id: user.id
-
-      can :read, Food
-      can :create, Food
-      can :destroy, Food, user_id: user.id
     end
   end
 end
