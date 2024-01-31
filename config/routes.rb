@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :users do
-  end
+  resources :users
 
   resources :recipes do
+    resources :recipe_foods
   end
 
-  resources :foods do
-  end
+  resources :foods
+
+  resources :shopping_lists, only: [:index]
 
   # Defines the root path route ("/") to the public_recipes controller's index action
   root "users#index"
