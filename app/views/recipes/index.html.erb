@@ -1,0 +1,10 @@
+<h2>Recipe List Page</h2>
+
+<% @recipes.each_with_index do |recipe, index| %>
+  <p><%= link_to recipe.name, recipe_path(recipe) %></p>
+  <p>By: <%= recipe.user.name %></p>
+  <p><%= recipe.description %></p>
+  <% if can? :destroy, recipe %>
+    <%= button_to 'Delete Recipe', destroy_recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
