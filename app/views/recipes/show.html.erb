@@ -1,8 +1,11 @@
-<section class="show_recipe">
+<section class="main-wrapper recipe-details">
+  <% if !current_user.nil? && current_user.id == @recipe.user_id %>
+    <%= link_to 'Back to Recipes', recipes_path, class: 'btn' %>
+  <% else %>
+    <%= link_to 'Back to Public Recipes', public_recipes_path, class: 'btn' %>
+  <% end %>
 
-  <%= link_to 'Back to Recipes', recipes_path, class: 'btn' %>
-
-  <article class="upper_section">
+  <article class="heading_section">
     <h2 class="recipe_heading"><%=@recipe.name %></h2>
 
     <div class="recipe_details">
@@ -10,48 +13,55 @@
         <p class="preparation_time"><%= "Preparation Time: #{@recipe.preparation_time} hour"%></p>
         <% if !current_user.nil? && current_user.id == @recipe.user_id %>
           <%= form_for @recipe do |f| %>
-            <div class="public_btn_container">
-              <%= f.label :public, class: "visibility_toggle_lable", for: "visibility-toggle" %>
-              <%= f.check_box :public, id: "visibility-toggle", class: "visibility_toggle_input" %>
-            </div>
-
+            <%= f.check_box :public, id: "visibility-toggle", class: "visibility_toggle_input" %>
+            <%= f.label :public, class: "visibility_toggle_lable", for: "visibility-toggle" %>
             <%= f.submit "Update Visibility", class: "btn" %>
           <%end%>
         <% end %>
       </div>
       <p><%= "Cooking Time: #{@recipe.cooking_time} hour"%></p>
-      <p><%= "Steps to prepare: #{@recipe.description}"%></p>
+      <p>Steps to prepare:</p>
+      <p><%= @recipe.description %></p>
     </div>
   </article>
+
   <% if !current_user.nil? && current_user.id == @recipe.user_id %>
     <div class="buttons">
       <%= link_to 'Generate Shopping List', shopping_lists_path, class: 'btn' %>
       <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe.id), class: 'btn' %>
     </div>
   <%end%>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Food</th>
-        <th>Quantity</th>
-        <th>Value</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @recipe.recipe_foods.each do |recipe_food| %>
+
+  <hr>
+
+  <% if @recipe.recipe_foods.empty? %>
+    <h4 class="alert">No ingredients added yet</h4>
+  <% else %>
+    <table class="food-table">
+      <thead>
         <tr>
-          <td> <%= recipe_food.food.name %></td>
-          <td> <%= recipe_food.quantity %></td>
-          <td> $ <%= recipe_food.food.price.to_i * recipe_food.quantity %></td>
-          <% if !current_user.nil? && current_user.id == @recipe.user_id %>
-            <td>
-              <%= link_to "Modify", "", class:'btn' %>
-              <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food.id), method: :delete, class:'btn' %>
-            </td>
-          <% end %>
+          <th colspan="2">Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @recipe.recipe_foods.each do |recipe_food| %>
+          <tr>
+            <td colspan="2"> <%= recipe_food.food.name %></td>
+            <td> <%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td> $ <%= recipe_food.food.price.to_i * recipe_food.quantity %></td>
+            <% if !current_user.nil? && current_user.id == @recipe.user_id %>
+              <td>
+                <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food.id), method: :delete, class:'btn delete-btn' %>
+              </td>
+            <% else %>
+              <td></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </section>

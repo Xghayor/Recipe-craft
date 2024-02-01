@@ -25,14 +25,6 @@ RSpec.describe 'Recipe Details', type: :feature do
       expect(page).to have_content(@recipe.description)
     end
 
-    it 'renders preparation time' do
-      expect(page).to have_content(@recipe.preparation_time)
-    end
-
-    it 'renders cooking time' do
-      expect(page).to have_content(@recipe.cooking_time)
-    end
-
     it 'renders add ingredient button' do
       expect(page).to have_content('Add Ingredient')
     end

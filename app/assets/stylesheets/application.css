@@ -69,23 +69,41 @@ main {
   padding: 0 2rem;
 }
 
-.signup_form,
-.login_form,
-.password_form,
-.confirmation_form,
-.post_form,
-.comment_form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem auto;
+.notice,
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.notice {
+  color: #1e6641;
+  background-color: #d8f3e5;
+  border-color: #c8eedb;
+}
+
+.alert {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
 }
 
 .signup_form,
 .login_form,
 .password_form,
-.confirmation_form {
+.confirmation_form,
+.add_new_form,
+.add_new_ingredient,
+.new_food,
+.new_recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
   max-width: 25rem;
+  padding-bottom: 6rem;
 }
 
 .form_heading {
@@ -128,10 +146,6 @@ main {
   height: 10rem;
 }
 
-.check_box {
-  align-self: start;
-}
-
 .btn {
   padding: 0.5rem 1rem;
   border: 2px solid #213535;
@@ -145,6 +159,15 @@ main {
 
 .btn:hover {
   color: #2076f7;
-  background-color: #fff;
+  background-color: inherit;
   border-color: #2076f7;
+}
+
+.amount-value {
+  display: flex;
+  justify-content: space-around;
+}
+
+.back-btn {
+  font-size: 1.05rem;
 }
