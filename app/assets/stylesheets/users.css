@@ -1,0 +1,41 @@
+.home-container {
+  height: 91vh;
+  background-image: url('food.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  margin: auto -2rem;
+}
+
+.logged-user {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+  font-size: 1.05rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+}
+
+.user-info {
+  align-self: flex-end;
+  border-bottom: 1px solid #ccc;
+}
+
+.welcome {
+  margin: 2.5rem 0;
+}
+
+.welcome h1,
+.welcome h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.welcome h1 {
+  font-size: 4em;
+}
+
+.welcome h3 {
+  font-size: 2.5em;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Recipe App</title>
+    <title>🍽 Recipe App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,8 +15,11 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if flash[:notice] && !current_page?("/") %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% elsif flash[:alert] && !current_page?("/") %>
+        <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
       <%= yield %>
     </main>
   </body>
