@@ -14,7 +14,7 @@ RSpec.feature 'Create a new food page', type: :feature do
   end
 
   scenario 'displays Create a New Food header' do
-    expect(page).to have_content('Create a New Food')
+    expect(page).to have_content('Create New Food')
   end
 
   scenario 'displays a form to create a new food' do

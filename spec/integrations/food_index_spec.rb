@@ -16,13 +16,13 @@ RSpec.feature 'Food List Page', type: :feature do
     visit foods_path
   end
 
-  scenario 'displays Add Food link for the current user' do
-    expect(page).to have_content('Add Food')
+  scenario 'displays New Food link for the current user' do
+    expect(page).to have_content('New Food')
   end
 
-  scenario 'redirects to the new food page when Add Food link is clicked' do
-    click_link 'Add Food'
-    expect(page).to have_content('Create a New Food')
+  scenario 'redirects to the new food page when New Food link is clicked' do
+    click_link 'New Food'
+    expect(page).to have_content('Create New Food')
     expect(page).to have_current_path(new_food_path(@user))
   end
 

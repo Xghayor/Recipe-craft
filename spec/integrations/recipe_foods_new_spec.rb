@@ -19,7 +19,7 @@ RSpec.describe 'RecipeFoods', type: :feature do
   end
 
   it 'should show the title' do
-    expect(page).to have_content 'Add Ingredient'
+    expect(page).to have_content 'Add New Ingredient'
   end
 
   it 'has a select field for food' do

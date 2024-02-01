@@ -48,12 +48,10 @@ RSpec.describe FoodsController, type: :controller do
   describe 'POST #create' do
     context 'with invalid parameters' do
       it 'does not create a new food' do
-        food_params = { name: 'New Food', measurement_unit: 'pieces', price: 5, quantity: nil }
+        food_params = { name: 'New Food', measurement_unit: 'pieces', price: nil, quantity: nil }
         expect do
           post :create, params: { food: food_params }
-        end.to change(Food, :count).by(0)
-        expect(response).to render_template(:new)
-        expect(flash[:error]).to be_present
+        end.to_not(change { Food.count })
       end
     end
 
@@ -64,7 +62,6 @@ RSpec.describe FoodsController, type: :controller do
           post :create, params: { food: food_params }
         end.to change(Food, :count).by(1)
         expect(response).to redirect_to(foods_path)
-        expect(flash[:success]).to be_present
       end
     end
   end

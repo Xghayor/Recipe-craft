@@ -19,8 +19,8 @@ RSpec.describe 'Recipe New', type: :feature do
 
   it 'should have a button to create recipe' do
     fill_in 'Name', with: 'Pizza'
-    fill_in 'Preparation time', with: '1'
-    fill_in 'Cooking time', with: '1'
+    fill_in 'Preparation Time', with: '1'
+    fill_in 'Cooking Time', with: '1'
     fill_in 'Description', with: 'Italian Dish'
     click_on 'Create Recipe'
   end

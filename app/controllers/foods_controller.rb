@@ -18,16 +18,15 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     @food.user = current_user
-    if @food.quantity.present? && @food.save
-      flash[:notice] = 'Successfully added new food'
+
+    if @food.save
       redirect_to foods_path
     else
-      flash[:alert] = 'Error adding the food'
       redirect_back(fallback_location: root_path)
     end
   end
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :quantity, :user_id)
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
   end
 end

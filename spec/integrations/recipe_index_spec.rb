@@ -17,7 +17,7 @@ RSpec.describe 'Recipe List Page', type: :feature do
   end
 
   scenario 'Display the header: Recipe List Page' do
-    expect(page).to have_content('Recipe List Page')
+    expect(page).to have_content('Recipes')
   end
 
   scenario 'Display a link to create a new recipe' do

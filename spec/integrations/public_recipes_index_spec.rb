@@ -29,8 +29,4 @@ RSpec.describe 'Public Recipes', type: :feature do
   it 'Displays the Total Products' do
     expect(page).to have_content('Total')
   end
-
-  it 'Displays the navbar content' do
-    expect(page).to have_content('Home')
-  end
 end

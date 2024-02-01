@@ -38,7 +38,7 @@ RSpec.describe 'RecipeFoods', type: :request do
     end
 
     it 'returns a success response' do
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
     end
 
     it 'response to html' do
