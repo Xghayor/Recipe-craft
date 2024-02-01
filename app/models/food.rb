@@ -6,5 +6,4 @@ class Food < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }, uniqueness: { scope: :user_id, message: 'already exists' }
   validates :price, presence: true
   validates :measurement_unit, presence: true
-  validates :quantity, presence: true
 end

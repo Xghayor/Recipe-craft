@@ -17,7 +17,7 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     @food.user = current_user
-    if @food.save
+    if @food.quantity.present? && @food.save
       flash[:success] = 'Successfully added new food'
       redirect_to foods_path
     else
