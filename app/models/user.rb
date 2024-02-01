@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :recipes, dependent: :destroy
+  has_many :foods, dependent: :destroy
 
   enum role: %i[user admin]
 
