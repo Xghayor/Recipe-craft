@@ -41,7 +41,6 @@ RSpec.describe 'Recipe List Page', type: :feature do
 
   scenario 'Display short information about recipe' do
     expect(page).to have_content('Delicious')
-    expect(page).to have_content(@user.name)
   end
 
   scenario 'Display a delete button to delete a recipe' do

@@ -1,7 +1,9 @@
 <nav class="navbar">
   <h2>Recipe App</h2>
   <ul class="nav-list">
-    <li><%= link_to 'Home', root_path, class: "nav-btn" %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Home', root_path, class: "nav-btn" %></li>
+    <% end %>
     <li><%= link_to 'Public Recipes', public_recipes_path, class: "nav-btn" %></li>
     <% if user_signed_in? %>
       <li><%= link_to 'Foods', foods_path, class: "nav-btn" %></li>

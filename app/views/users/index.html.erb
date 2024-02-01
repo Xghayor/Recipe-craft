@@ -1,2 +1,14 @@
-<p>Logged in with <%= current_user.name %></p>
-<h1>Welcome to our Recipe App!</h1>
+<section class="home-container">
+  <div class="logged-user">
+    <article class="user-info">
+      <p>User</p>
+      <p>Name: <%= current_user.name %></p>
+      <p>Email: <%= current_user.email %></p>
+    </article>
+
+    <article class="welcome">
+      <h1>We become what we consume!</h1>
+      <h3>Explore our recipes 🍽</h3>
+    </article>
+  </div>
+</section>

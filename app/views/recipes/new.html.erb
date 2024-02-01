@@ -1,48 +1,35 @@
 <section class="new_recipe">
-  <h2 >Create New Recipe</h2>
+  <h2 class='main-heading'>Create New Recipe</h2>
 
-  <%= link_to 'Back to Recipes', recipes_path, class: 'btn' %>
+  <%= form_with model: @recipe, class: "form_container" do |form| %>
 
-  <article class="new_recipe_form">
-    <%= form_with model: @recipe do |form| %>
-      <div class="form-group">
-        <%= form.label :name %>
-        <div class="new_recipe_name">
-          <%= form.text_field :name, class: "form_field" %>
-        </div>
-      </div>
+    <div class="form_group">
+      <%= form.label :name, "Recipe Name", class: "form_label" %>
+      <%= form.text_field :name, class: "form_input" %>
+    </div>
 
-      <div class="form-group">
-        <%= form.label :preparation_time %>
-        <div class="recipe_prep_time">
-          <%= form.number_field :preparation_time, class: "form_field" %>
-        </div>
-      </div>
+    <div class="form_group">
+      <%= form.label :preparation_time, "Preparation Time (hrs)", class: "form_label" %>
+      <%= form.number_field :preparation_time, class: "form_input" %>
+    </div>
 
-      <div class="form-group">
-        <%= form.label :cooking_time %>
-        <div class="cooking_time">
-          <%= form.number_field :cooking_time, class: "form_field" %>
-        </div>
-      </div>
+    <div class="form_group">
+      <%= form.label :cooking_time, "Cooking Time (hrs)", class: "form_label" %>
+      <%= form.number_field :cooking_time, class: "form_input" %>
+    </div>
 
-      <div class="form-group">
-        <%= form.label :description %>
-        <div class="description">
-          <%= form.text_area :description, class: "form_field" %>
-        </div>
-      </div>
+    <div class="form_group">
+      <%= form.label :description, class: "form_label" %>
+      <%= form.text_area :description, class: "form_input" %>
+    </div>
 
-      <div class="form-group">
-        <%= form.label :public %>
-        <div class="public">
-          <%= form.select :public, options_for_select([[ 'Yes', true ], [ 'No', false ]]), class: "form_field" %>
-        </div>
-      </div>
+    <div class="field">
+      <%= form.check_box :public, class: "form_input" %>
+      <%= form.label :public, class: "form_label" %>
+    </div>
 
-      <div class="form-group">
-        <%= form.submit class: "btn" %>
-      </div>
-    <% end %>
-  </article>
+    <%= form.submit class: "btn" %>
+  <% end %>
+
+  <%= link_to 'Back to Recipes', recipes_path, class: 'back-btn' %>
 </section>
