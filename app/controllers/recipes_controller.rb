@@ -18,11 +18,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-      flash[:success] = 'Successfully added new recipe'
+      flash[:notice] = 'Successfully added new recipe'
       redirect_to recipes_path
     else
-      flash[:error] = 'Error adding the recipe'
-      render :new
+      flash[:alert] = 'Error adding the recipe'
+      redirect_back(fallback_location: root_path)
     end
   end
 

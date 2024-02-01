@@ -7,7 +7,8 @@ class FoodsController < ApplicationController
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
-    redirect_to foods_path
+    flash[:notice] = 'Food deleted successfully'
+    redirect_back(fallback_location: root_path)
   end
 
   def new
@@ -18,11 +19,11 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     @food.user = current_user
     if @food.quantity.present? && @food.save
-      flash[:success] = 'Successfully added new food'
+      flash[:notice] = 'Successfully added new food'
       redirect_to foods_path
     else
-      flash[:error] = 'Error adding the food'
-      render :new
+      flash[:alert] = 'Error adding the food'
+      redirect_back(fallback_location: root_path)
     end
   end
 
