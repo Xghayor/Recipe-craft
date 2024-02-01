@@ -1,14 +1,13 @@
 class FoodsController < ApplicationController
-  helper ActionView::Helpers::NumberHelper
   def index
     @user = current_user
-    @foods = @user.foods
+    @foods = @user.foods.includes(:user)
   end
 
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
-    @user = current_user
+    redirect_to foods_path
   end
 
   def new
@@ -28,6 +27,6 @@ class FoodsController < ApplicationController
   end
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity, :user_id)
   end
 end
