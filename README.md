@@ -10,7 +10,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [👨‍💻 Recipe App ](#-recipe-app-)
+- [👨‍💻 Recipe Craft ](#-recipe-craft-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -28,9 +28,9 @@
   - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
-# 👨‍💻 Recipe App <a name="about-project"></a>
+# 👨‍💻 Recipe Craft <a name="about-project"></a>
 
-**The Recipe App** allows you to easily manage your recipes and ingredients. You can save ingredients, track your stock, create new recipes, and generate a shopping list based on your needs. The app also encourages recipe sharing, with the option to make them public for everyone to enjoy.
+**The Recipe Craft App** allows you to easily manage your recipes and ingredients. You can save ingredients, track your stock, create new recipes, and generate a shopping list based on your needs. The app also encourages recipe sharing, with the option to make them public for everyone to enjoy.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -91,13 +91,13 @@ To setup this project locally:
 4. Clone the repository by running the following command:
 
 ```
-git clone git@github.com:MNisarAli/recipe_app.git
+git clone git@github.com:Xghayor/Recipe-craft.git
 ```
 
 5. Navigate into the cloned repository:
 
 ```
-cd recipe_app
+cd Recipe-craft
 ```
 
 ### Installation
