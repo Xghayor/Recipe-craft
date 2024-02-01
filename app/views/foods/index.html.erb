@@ -1,0 +1,35 @@
+<section class="main-wrapper">
+  <h2 class="main-heading">Foods</h2>
+  <% if current_user == @user %>
+    <%= link_to "New Food", new_food_path(current_user), class:'btn' %>
+  <% end %>
+  
+  <% if @foods.empty? %>
+    <h4 class="alert">No foods added yet.</h4>
+  <% else %>
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th colspan="2">Food</th>
+          <th>Measurement Unit</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each_with_index do |food, index| %>
+          <tr>
+          <td colspan="2"><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td>$<%= food.price %></td>
+          <td>
+            <% if can? :destroy, food %>
+              <%= button_to 'Delete', destroy_food_path(food), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %>
+            <% end %>
+          </td>
+          </tr>
+        <% end %>
+      <tbody>
+    </table>
+  <% end %>
+<section class="main-wrapper">

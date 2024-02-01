@@ -1,0 +1,173 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #2f4f4f;
+}
+
+.navbar {
+  background-color: #edeff1;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-btn {
+  display: block;
+  cursor: pointer;
+  font-size: 1.05rem;
+  border: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.user-btn {
+  border: 2px solid;
+  border-radius: 3px;
+  padding: 3px 10px;
+  color: black;
+}
+
+.nav-btn:hover {
+  color: #2076f7;
+}
+
+main {
+  padding: 0 2rem;
+}
+
+.notice,
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.notice {
+  color: #1e6641;
+  background-color: #d8f3e5;
+  border-color: #c8eedb;
+}
+
+.alert {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+.signup_form,
+.login_form,
+.password_form,
+.confirmation_form,
+.add_new_form,
+.add_new_ingredient,
+.new_food,
+.new_recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  max-width: 25rem;
+  padding-bottom: 6rem;
+}
+
+.form_heading {
+  font-size: 2rem;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 0 1.2rem;
+  min-width: 85%;
+  gap: 1.5rem;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_label {
+  margin-bottom: 0.2rem;
+}
+
+.form_input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.form_input:focus {
+  outline: none;
+  border-color: #213535;
+}
+
+.form_group textarea {
+  height: 10rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #213535;
+  border-radius: 0.25rem;
+  background-color: #213535;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+  color: #2076f7;
+  background-color: inherit;
+  border-color: #2076f7;
+}
+
+.amount-value {
+  display: flex;
+  justify-content: space-around;
+}
+
+.back-btn {
+  font-size: 1.05rem;
+}

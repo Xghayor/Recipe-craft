@@ -1,0 +1,30 @@
+<section class="new_food">
+  <h2 class='main-heading'>Create New Food</h2>
+
+  <%= form_with model: @food, class:"form_container" do |form| %>
+
+    <div class="form_group">
+      <%= form.label :name, "Food Name", class: "form_label" %>
+      <%= form.text_field :name, class: "form_input" %>
+    </div>
+
+    <div class="form_group">
+      <%= form.label :measurement_unit, class: "form_label" %>
+      <%= form.text_field :measurement_unit, class: "form_input" %>
+    </div>
+
+    <div class="form_group">
+      <%= form.label :price, "Price ($)", class: "form_label" %>
+      <%= form.number_field :price, class: "form_input", value: number_to_currency(form.object.price) %>
+    </div>
+
+    <div class="form_group">
+      <%= form.label :quantity, class: "form_label" %>
+      <%= form.number_field :quantity, class: "form_input" %>
+    </div>
+
+    <%= form.submit class: "btn" %>
+  <% end %>
+
+  <%= link_to 'Back to Foods', foods_path, class: 'back-btn' %>
+</section>

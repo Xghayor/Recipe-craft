@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.main-wrapper {
+  margin: auto;
+  max-width: 85%;
+}
+
+.main-heading {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.recipe-list {
+  padding: 0;
+}
+
+.recipe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap;
+  margin-bottom: 2rem;
+  padding: 1rem 2.5rem;
+  border: 1px solid #ccc;
+  background-color: #ffe4c4;
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+.recipe-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.recipe-heading {
+  font-family: 'Open Sans', sans-serif;
+  flex: 3;
+}
+
+.recipe-heading h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-heading h4,
+.recipe-info p {
+  font-size: 1rem;
+  color: #5a5a5a;
+}
+
+.recipe-heading h4 {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  flex: 1;
+}

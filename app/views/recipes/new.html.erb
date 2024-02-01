@@ -1,0 +1,35 @@
+<section class="new_recipe">
+  <h2 class='main-heading'>Create New Recipe</h2>
+
+  <%= form_with model: @recipe, class: "form_container" do |form| %>
+
+    <div class="form_group">
+      <%= form.label :name, "Recipe Name", class: "form_label" %>
+      <%= form.text_field :name, class: "form_input" %>
+    </div>
+
+    <div class="form_group">
+    <%= form.label :preparation_time, "Preparation Time (hrs)", class: "form_label" %>
+    <%= form.number_field :preparation_time, class: "form_input" %>
+  </div>
+
+    <div class="form_group">
+      <%= form.label :cooking_time, "Cooking Time (hrs)", class: "form_label" %>
+      <%= form.number_field :cooking_time, class: "form_input" %>
+    </div>
+
+    <div class="form_group">
+      <%= form.label :description, class: "form_label" %>
+      <%= form.text_area :description, class: "form_input" %>
+    </div>
+
+    <div class="field">
+      <%= form.check_box :public, class: "form_input" %>
+      <%= form.label :public, class: "form_label" %>
+    </div>
+
+    <%= form.submit class: "btn" %>
+  <% end %>
+
+  <%= link_to 'Back to Recipes', recipes_path, class: 'back-btn' %>
+</section>
