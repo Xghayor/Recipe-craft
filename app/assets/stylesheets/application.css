@@ -13,3 +13,138 @@
  *= require_tree .
  *= require_self
  */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #2f4f4f;
+}
+
+.navbar {
+  background-color: #edeff1;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-btn {
+  display: block;
+  cursor: pointer;
+  font-size: 1.05rem;
+  border: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.user-btn {
+  border: 2px solid;
+  border-radius: 3px;
+  padding: 3px 10px;
+  color: black;
+}
+
+.nav-btn:hover {
+  color: #2076f7;
+}
+
+main {
+  padding: 0 2rem;
+}
+
+.signup_form,
+.login_form,
+.password_form,
+.confirmation_form,
+.post_form,
+.comment_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.signup_form,
+.login_form,
+.password_form,
+.confirmation_form {
+  max-width: 25rem;
+}
+
+.form_heading {
+  font-size: 2rem;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 0 1.2rem;
+  min-width: 85%;
+  gap: 1.5rem;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_label {
+  margin-bottom: 0.2rem;
+}
+
+.form_input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.form_input:focus {
+  outline: none;
+  border-color: #213535;
+}
+
+.form_group textarea {
+  height: 10rem;
+}
+
+.check_box {
+  align-self: start;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #213535;
+  border-radius: 0.25rem;
+  background-color: #213535;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+  color: #2076f7;
+  background-color: #fff;
+  border-color: #2076f7;
+}
