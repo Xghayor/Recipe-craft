@@ -148,7 +148,7 @@ The collaborators of this project.
 - LinkedIn: [@Muhammad Nisar Ali](https://www.linkedin.com/in/muhammad-nisar-ali)
 
 
-👨‍🚀 **Anita Sharma**
+👨‍🚀 **Ghayoor Ul Baqir**
 
 - GitHub: [@Xghayor](https://github.com/Xghayor)
 - LinkedIn: [Ghayoor-Ul-Baqir](https://www.linkedin.com/in/ghayoor-ul-baqir/)
