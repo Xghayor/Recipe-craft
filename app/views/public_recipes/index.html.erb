@@ -9,7 +9,7 @@
         </div>
         <div class="recipe-info">
           <p><%= "Total Food Items: #{recipe.foods.count}" %></p>
-          <p><%= "Total Price: $#{recipe.foods.sum(:price)}" %></p>
+          <p><%= "Total Price: $#{@recipe_foods.where(recipe: recipe).map {|value| value.food.price.to_i * value.quantity}.sum}" %></p>
         </div>
       </li>
     <% end %>

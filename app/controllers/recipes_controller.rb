@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @user = current_user
-    @recipes = @user.recipes
+    @recipes = @user.recipes.includes(:user)
   end
 
   def show
@@ -42,8 +42,6 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    @user = current_user
-
     flash[:notice] = 'Recipe deleted successfully'
     redirect_back(fallback_location: root_path)
   end

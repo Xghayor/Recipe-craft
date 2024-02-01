@@ -25,7 +25,7 @@
   </article>
   <% if !current_user.nil? && current_user.id == @recipe.user_id %>
     <div class="buttons">
-      <%= link_to 'Generate Shopping List', recipe_shopping_list_path(@recipe.id), class: 'btn' %>
+      <%= link_to 'Generate Shopping List', shopping_lists_path, class: 'btn' %>
       <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe.id), class: 'btn' %>
     </div>
   <%end%>
@@ -39,16 +39,15 @@
       </tr>
     </thead>
     <tbody>
-      <% @recipe.foods.each do  |food| %>
+      <% @recipe.recipe_foods.each do |recipe_food| %>
         <tr>
-          <td><%= food.name %></td>
-          <%@quantity = RecipeFood.find_by(food_id: food.id).quantity%>
-          <td><%= @quantity %></td>
-          <td><%= "$ #{food.price * @quantity}" %></td>
+          <td> <%= recipe_food.food.name %></td>
+          <td> <%= recipe_food.quantity %></td>
+          <td> $ <%= recipe_food.food.price.to_i * recipe_food.quantity %></td>
           <% if !current_user.nil? && current_user.id == @recipe.user_id %>
             <td>
-              <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, food.id), class:'btn' %>
-              <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, food.id), method: :delete, class:'btn' %>
+              <%= link_to "Modify", "", class:'btn' %>
+              <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food.id), method: :delete, class:'btn' %>
             </td>
           <% end %>
         </tr>
